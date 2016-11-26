@@ -1,0 +1,32 @@
+
+<!-- Cabeçalho -->
+<div class="jumbotron">
+    <h1 class="text-center">Placas</h1>
+</div>
+
+<p ng-show="mensagem_sucesso.length" class="alert alert-success">{{mensagem_sucesso}}</p>
+
+<div class="row">
+    <div class="col-xs-12">
+        <!-- Filtro para busca -->
+        <form>
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <a href="/nova" class="btn btn-primary">Nova</a>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Resposta da Busca -->
+<div class="row">
+    <!-- foreach do angular ng-repeat objeto in lista -->
+    <div class="col-xs-4 painel-animado" ng-repeat="placa in placas">
+
+        <!-- lacunas criadas para na requisição da página, a mesma ser reconstruída substituindo os valores livro.nome e livro.img-->
+        <meu-painel valor="{{placa.resultado}}">
+            <img src="{{placa.imagemCompleta}}" class="img-responsive center-block" alt="{{placa.resultado}}"/>
+        </meu-painel>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<!-- Página que vai me permitir cadastrar novo livro -->
+
+
+<!-- bloco título da página que usa two way data binding, quando o nome é preenchido no formulário o campo livro.nome que está pendurano no scope é modificado, e este valor tbm é automáticamente -->
+<div class="page-header text-center">
+    <h1>{{livro.nome}}</h1>
+</div>
+
+<!-- novalidate me permite cancelar a validação do html5. Pq ou eu uso a validação do html5 ou a validação do angular, e eu quero usar a validação do html 5, q tenho mais liberdade 
+nas mensagens a serem exibidas-->
+<!-- ng-submit é uma diretiva que funciona como uma função onsubmit do javascript. E me permite chamar a minha função submeter() quando for dado um submit no nosso formulário, que vai ser responsável por cadastrar meu livro-->
+<form novalidate name="formulario" class="row" >
+    <div class="col-xs-12">
+
+        <!-- mensagem de sucesso, caso o livro tenha sido cadastrado. o ng-show exibe se for true. e o mensagem.length retorna a quantidade de elementos na minha string mensagem e se ela for 0
+            o ng-show vai ser false, pq 0 é false no javascript. -->
+        <p ng-show="mensagem_sucesso.length" class="alert alert-success">{{mensagem_sucesso}}</p>
+        <p ng-show="mensagem_falha.length" class="alert alert-danger">{{mensagem_falha}}</p>
+
+       <div class=" list card">
+                <div class="item item-image">
+                    <img ng-src="{{pictureUrl}}">
+                </div>
+                <div class="padding">
+                    <div class="row">
+                    <button ng-click="takePhoto()" class="button button-block button-calm">
+                            Take a Picture.......
+                    </button>
+                    </div>
+                    <div class="row">
+                        <button ng-click="sendPhoto()" class="button button-block button-calm">
+                                Send.....
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+       <a href="/" class="btn btn-primary">Voltar </a>
+    </div>
+   
+</form>

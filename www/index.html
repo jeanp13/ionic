@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Teste Câmera</title>
+
+        <link rel="manifest" href="manifest.json">
+
+        <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- ionic/angularjs js -->
+        <script src="lib/ionic/js/ionic.bundle.js"></script>
+        <script src="cordova.js"></script>
+        <script src="lib/ngCordova/dist/ng-cordova.js"></script>        
+        <script src="lib/jr-crop/dist/jr-crop.js"></script>
+
+        <script src="js/main.js"></script>
+        
+        <!-- your app's js -->
+        <script src="js/app.js"></script>
+        <script src="js/controllers/camera-controller.js"></script>
+        
+        <!-- Diretiva Angular -->
+        <script src="js/directives/minha-diretiva.js"></script>
+        
+    </head>
+    
+    <body>
+        <!-- diretiva ng-controller: permite coloar esta parte do bloco sobre responsabilidade do Controller "LivroController" -->
+        <div class="container">
+
+            <!-- diretiva que cria um blog para chamar seus artefatos de DOM para criar uma single page application" -->
+            <ng-view>
+
+            </ng-view>
+        </div><!-- fim container -->
+    </body>
+</html>
